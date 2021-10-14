@@ -1,0 +1,758 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta name="google-site-verification" content="ftFOlJETX-2KNjaPh8W6s8lhigItRuu9fOmjHZZ0nY0" />
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+  <title>Identity  conversion for emotional speakers: a study for disentanglement of emotion style and speaker identity </title>
+</head>
+<style type="text/css">
+  table {
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  audio {
+    width: 100%;
+  }
+
+  thead>tr>th:first-child {
+    width: 96px;
+  }
+
+  @media (max-width: 767px) {
+    .big-screen {
+      display: none;
+    }
+  }
+
+  @media (min-width: 767px) {
+    .small-screen {
+      display: none;
+    }
+  }
+</style>
+
+<body>
+  <header class="header">
+    <div class="jumbotron bg-secondary text-center">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-12">
+            <h1><a class="text-light"> Identity  conversion for emotional speakers: a study for disentanglement of emotion style and speaker identity </h1><br>
+             <font size=5><span style="color:#FFFFFF"> Zongyang Du<sup>1,2</sup>, Berrak Sisman<sup>1</sup>, Kun Zhou<sup>2</sup>, Haizhou  Li<sup>2</sup> </br>
+             <font size=3><span style="color:#000000"> zongyang_du@mymail.sutd.edu.sg &nbsp berrak_sisman@sutd.edu.sg &nbsp zhoukun@u.nus.edu  &nbsp haizhou.li@nus.edu.sg
+             </font><font size=4> <br> <br> <sup>1</sup>  Information Systems Technology and Design, Singapore University of Technology and Design  <br> <sup>2</sup>  Dept. of Electrical and Computer Engineering, National University of Singapore  <br></font>  </a>  
+            <p>
+              <div class="row">
+              </div>
+            </p>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <div class="row" id="result">
+        <div class="col-md-12">
+           <figcaption style="terx-align:center;"></font><font size=3> 
+          <b>Abstract</b>: Expressive voice conversion performs identity conversion for emotional speakers by jointly converting speaker identity and speaker-dependent emotion style. Due to the hierarchical structure of speech emotion, it is challenging to disentangle the speaker-dependent emotional style for expressive voice conversion. Motivated by the recent success on speaker disentanglement with variational autoencoder (VAE), we propose an expressive voice conversion framework which can effectively disentangle linguistic content, speaker identity, pitch and emotional style information. We study the use of emotion encoder to model emotional style explicitly, and introducemutual information (MI) losses to reduce the irrelevant information from the disentangled emotion representations. At run-time, our proposed framework can convert both speaker identity and speaker-dependent emotional style without the need for parallel data. Experimental results validate the effectiveness of our proposed framework in both objective andsubjective evaluations.
+<br /><br />
+
+
+          <h2>--------------------------------   Model Architecture   -------------------------------</h2>
+          <br />
+                    <img src="./framework.png"   height="250" / > <p>
+                      <figcaption style="terx-align:center;"></font><font size=3> 
+                       Figure 1. An illustration of the training phase of the proposed framework, where the green boxes represent the modules that are involved in the training. </font>
+                      </figcaption><br>
+
+                   
+                  <div class="big-screen">
+                    
+                     <h2>---------------------------------   Speech Samples  ---------------------------------</h2>
+
+                  
+                    <h6> <b>Baseline:</b> VQMIVC[1] </h6>
+                    <h6> <b>Proposed Method:</b> an expressive voice conversion framework which can effectively disentangle linguistic content, speaker identity, pitch and emotional style information.  </h6>
+	<br />
+                     <h6> The samples are from five emotions (surprise, angry, sad, happy, and neutral). </h6>
+<br /><br />
+                      <table class="table">
+
+             
+                         
+                        </tr>
+                      <tbody>
+                                
+                                
+                                <tr>
+                                    <th></th>
+                                    <th style="text-align:center;">   Source</th>
+                                    <th style="text-align:center;">   VQMIVC[1]</th>
+                                    <th style="text-align:center;">   Proposed Method</th>
+		    <th style="text-align:center;">   Target</th>
+                              
+                          
+                                </tr>
+		 <!-- single sentence -->
+                                                                  </tr>
+                                   <th colspan=5><h8> Surprise</h8></th>
+                               </tr>
+                                <!-- single sentence -->
+
+                                <tr>
+                                  <th scope="row">    </th>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./Sample/Source/1_0011_001737.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+
+                                  <td>
+                                    <audio controls>
+                                      <source src="./Sample/VQMIVC/1_0011_001737_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./Sample/Proposed/1_0011_001737_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./Sample/Target/1_0013_001737.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                                                  <!-- single sentence -->
+
+                                <tr>
+                                  <th scope="row">    </th>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./Sample/Source/2_0015_001520.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+
+                                  <td>
+                                    <audio controls>
+                                      <source src="./Sample/VQMIVC/2_0015_001520_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./Sample/Proposed/2_0015_001520_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./Sample/Target/2_0017_001520.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                                                  <!-- single sentence -->
+                                <tr>
+                                  <th scope="row">    </th>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./Sample/Source/3_0020_001731.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+
+                                  <td>
+                                    <audio controls>
+                                      <source src="./Sample/VQMIVC/3_0020_001731_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./Sample/Proposed/3_0020_001731_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./Sample/Target/3_0017_001731.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                                                  <!-- single sentence -->
+
+                                <tr>
+                                  <th scope="row">    </th>
+                                                                    <td>
+                                    <audio controls>
+                                      <source src="./Sample/Source/4_0018_001738.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+
+                                  <td>
+                                    <audio controls>
+                                      <source src="./Sample/VQMIVC/4_0018_001738_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./Sample/Proposed/4_0018_001738_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./Sample/Target/4_0014_001738.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+
+									</tr>					                                   
+				<th colspan=5><h8> Angry</h8></th>
+                               </tr>
+                                                                                                    
+                                <!-- single sentence -->
+
+                                <tr>
+                                  <th scope="row">    </th>
+                                                                    <td>
+                                    <audio controls>
+                                      <source src="./Sample/Source/5_0011_000692.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+
+                                  <td>
+                                    <audio controls>
+                                      <source src="./Sample/VQMIVC/5_0011_000692_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./Sample/Proposed/5_0011_000692_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./Sample/Target/5_0013_000692.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                                                  <!-- single sentence -->
+
+                                <tr>
+                                  <th scope="row">    </th>
+                                                                    <td>
+                                    <audio controls>
+                                      <source src="./Sample/Source/6_0015_000683.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+
+                                  <td>
+                                    <audio controls>
+                                      <source src="./Sample/VQMIVC/6_0015_000683_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./Sample/Proposed/6_0015_000683_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./Sample/Target/6_0017_000683.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                                                  <!-- single sentence -->
+                                     <tr>
+                                  <th scope="row">  </th>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./Sample/Source/7_0013_000681.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+
+                                  <td>
+                                    <audio controls>
+                                      <source src="./Sample/VQMIVC/7_0013_000681_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./Sample/Proposed/7_0013_000681_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./Sample/Target/7_0015_000681.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+
+                                <!-- single sentence -->
+
+     		<tr>
+                                  <th scope="row">  </th>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./Sample/Source/8_0018_000691.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+
+                                  <td>
+                                    <audio controls>
+                                      <source src="./Sample/VQMIVC/8_0018_000691_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./Sample/Proposed/8_0018_000691_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./Sample/Target/8_0014_000691.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                                                                                 </tr>
+                                  <th colspan=3><h8>Sad</h8></th>
+                              </tr>
+                                <!-- single sentence -->
+
+                                <tr>
+                                  <th scope="row">    </th>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./Sample/Source/9_0011_001384.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+
+                                  <td>
+                                    <audio controls>
+                                      <source src="./Sample/VQMIVC/9_0011_001384_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./Sample/Proposed/9_0011_001384_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./Sample/Target/9_0013_001384.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                                                  <!-- single sentence -->
+
+                                <tr>
+                                  <th scope="row">    </th>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./Sample/Source/10_0017_001392.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+
+                                  <td>
+                                    <audio controls>
+                                      <source src="./Sample/VQMIVC/10_0017_001392_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./Sample/Proposed/10_0017_001392_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./Sample/Target/10_0018_001392.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                                                  <!-- single sentence -->
+                                <tr>
+                                  <th scope="row">    </th>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./Sample/Source/11_0020_001383.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+
+                                  <td>
+                                    <audio controls>
+                                      <source src="./Sample/VQMIVC/11_0020_001383_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./Sample/Proposed/11_0020_001383_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./Sample/Target/11_0017_001383.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                                                  <!-- single sentence -->
+
+                                <tr>
+                                  <th scope="row">    </th>
+                                                                    <td>
+                                    <audio controls>
+                                      <source src="./Sample/Source/12_0018_001293.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+
+                                  <td>
+                                    <audio controls>
+                                      <source src="./Sample/VQMIVC/12_0018_001293_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./Sample/Proposed/12_0018_001293_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./Sample/Target/12_0014_001293.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+
+									</tr>					                                   
+				<th colspan=5><h8> Happy</h8></th>
+                               </tr>
+                                                                  <!-- single sentence -->
+
+                                <tr>
+                                  <th scope="row">    </th>
+                                                                    <td>
+                                    <audio controls>
+                                      <source src="./Sample/Source/13_0011_000967.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+
+                                  <td>
+                                    <audio controls>
+                                      <source src="./Sample/VQMIVC/13_0011_000967_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./Sample/Proposed/13_0011_000967_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./Sample/Target/13_0013_000967.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                                                  <!-- single sentence -->
+
+                                <tr>
+                                  <th scope="row">    </th>
+                                                                    <td>
+                                    <audio controls>
+                                     <source src="./Sample/Source/14_0015_001047.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+
+                                  <td>
+                                    <audio controls>
+                                      <source src="./Sample/VQMIVC/14_0015_001047_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./Sample/Proposed/14_0015_001047_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./Sample/Target/14_0017_001047.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                                                  <!-- single sentence -->
+                                     <tr>
+                                  <th scope="row">  </th>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./Sample/Source/15_0020_000880.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+
+                                  <td>
+                                    <audio controls>
+                                      <source src="./Sample/VQMIVC/15_0020_000880_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./Sample/Proposed/15_0020_000880_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./Sample/Target/15_0017_000880.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+					 <!-- single sentence -->
+     		<tr>
+                                  <th scope="row">  </th>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./Sample/Source/16_0019_001031.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+
+                                  <td>
+                                    <audio controls>
+                                      <source src="./Sample/VQMIVC/16_0019_001031_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./Sample/Proposed/16_0019_001031_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./Sample/Target/16_0011_001031.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+		                                                                                                 </tr>
+                                  <th colspan=3><h8> Neutral</h8></th>
+                              </tr>
+                                <!-- single sentence -->
+
+                                <tr>
+                                  <th scope="row">    </th>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./Sample/Source/17_0014_000340.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+
+                                  <td>
+                                    <audio controls>
+                                      <source src="./Sample/VQMIVC/17_0014_000340_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./Sample/Proposed/17_0014_000340_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./Sample/Target/17_0020_000340.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                                                  <!-- single sentence -->
+
+                                <tr>
+                                  <th scope="row">    </th>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./Sample/Source/18_0018_000335.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+
+                                  <td>
+                                    <audio controls>
+                                      <source src="./Sample/VQMIVC/18_0018_000335_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./Sample/Proposed/18_0018_000335_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./Sample/Target/18_0014_000335.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                                                  <!-- single sentence -->
+                                <tr>
+                                  <th scope="row">    </th>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./Sample/Source/19_0013_000331.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+
+                                  <td>
+                                    <audio controls>
+                                      <source src="./Sample/VQMIVC/19_0013_000331_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./Sample/Proposed/19_0013_000331_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./Sample/Target/19_0015_000331.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                                                  <!-- single sentence -->
+
+                                <tr>
+                                  <th scope="row">    </th>
+                                                                    <td>
+                                    <audio controls>
+                                     <source src="./Sample/Source/20_0018_000336.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+
+                                  <td>
+                                    <audio controls>
+                                      <source src="./Sample/VQMIVC/20_0018_000336_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./Sample/Proposed/20_0018_000336_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./Sample/Target/20_0014_000336.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                                                  
+
+                      </tbody>
+                       
+
+                    </table>
+
+ </div>
+
+[1] Wang, Disong, et al. "VQMIVC: Vector Quantization and Mutual Information-Based Unsupervised Speech Representation Disentanglement for One-shot Voice Conversion." arXiv preprint arXiv:2106.10132 (2021).
+<p>
+
+
+
+
+
+                  </div>
+                 
+        </div>
+      </div>
+      <hr>
+      <div class="row" id="ref">
+        <div class="col">
+          <!--<h2>References</h2>
+          
+         -->
+        </div>
+      </div>
+      <hr>
+      <!-- <div class="row" id="contact">
+          <div class="col">
+            <h2>Contact</h2>
+            <div></div>
+          </div>
+        </div> -->
+    </div>
+  </main>
+  <footer class="bg-secondary text-light mt-4 pt-3 pb-2 ">
+    <div class="container">
+      <p class="text-center">
+        
+      </p>
+    </div>
+  </footer>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
